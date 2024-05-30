@@ -55,6 +55,7 @@ public class Production {
         Production production = new Production();
         production.setProductId(salesRegistered.getProductId());
         production.setQty(salesRegistered.getQty());
+        production.setOrderId(salesRegistered.getId());
         repository().save(production);
 
      

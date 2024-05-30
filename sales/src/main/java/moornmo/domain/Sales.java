@@ -24,6 +24,8 @@ public class Sales {
 
     private Integer qty;
 
+    private String status;
+
     @PostPersist
     public void onPostPersist() {
         SalesRegistered salesRegistered = new SalesRegistered(this);
@@ -51,7 +53,7 @@ public class Sales {
         
         repository().findById(productionCompleted.getOrderId()).ifPresent(sales->{
             
-            sales // do something
+            sales.setStatus("DELIVERED");
             repository().save(sales);
 
 

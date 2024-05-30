@@ -37,8 +37,8 @@ mvn spring-boot:run
 ```
 - production
 ```
- http :8088/productions/2
- http PUT :8088/productions/2/complete-production
+ http :8088/productions/1
+ http PUT :8088/productions/1/completeproduction
 ```
 - check the sales status
 ```
