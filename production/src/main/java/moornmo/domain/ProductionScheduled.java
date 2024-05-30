@@ -14,6 +14,7 @@ public class ProductionScheduled extends AbstractEvent {
     private Long id;
     private String productId;
     private Integer qty;
+    private Long orderId;
 
     public ProductionScheduled(Production aggregate) {
         super(aggregate);
