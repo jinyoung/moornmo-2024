@@ -37,7 +37,7 @@ mvn spring-boot:run
 ```
 - production
 ```
- http :8088/productions id="id" productId="productId" qty="qty" 
+ http :8088/productions id="id" productId="productId" qty="qty" orderId="orderId" 
 ```
 
 

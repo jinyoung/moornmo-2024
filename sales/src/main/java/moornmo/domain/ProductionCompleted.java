@@ -12,4 +12,5 @@ public class ProductionCompleted extends AbstractEvent {
     private Long id;
     private String productId;
     private Integer qty;
+    private Long orderId;
 }

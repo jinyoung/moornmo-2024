@@ -22,6 +22,8 @@ public class Production {
 
     private Integer qty;
 
+    private Long orderId;
+
     @PostPersist
     public void onPostPersist() {
         ProductionScheduled productionScheduled = new ProductionScheduled(this);
