@@ -49,11 +49,13 @@ public class Production {
     public static void addProductionSchedule(SalesRegistered salesRegistered) {
         //implement business logic here:
 
-        /** Example 1:  new item 
+        /** Example 1:  new item    */
         Production production = new Production();
+        production.setProductId(salesRegistered.getProductId());
+        production.setQty(salesRegistered.getQty());
         repository().save(production);
 
-        */
+     
 
         /** Example 2:  finding and process
         

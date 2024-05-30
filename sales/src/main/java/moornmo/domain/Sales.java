@@ -47,16 +47,16 @@ public class Sales {
 
         */
 
-        /** Example 2:  finding and process
+        /** Example 2:  finding and process       */
         
-        repository().findById(productionCompleted.get???()).ifPresent(sales->{
+        repository().findById(productionCompleted.getOrderId()).ifPresent(sales->{
             
             sales // do something
             repository().save(sales);
 
 
          });
-        */
+ 
 
     }
     //>>> Clean Arch / Port Method
