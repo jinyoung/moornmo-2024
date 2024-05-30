@@ -12,6 +12,15 @@ public class ProductionHateoasProcessor
 
     @Override
     public EntityModel<Production> process(EntityModel<Production> model) {
+        model.add(
+            Link
+                .of(
+                    model.getRequiredLink("self").getHref() +
+                    "/completeproduction"
+                )
+                .withRel("completeproduction")
+        );
+
         return model;
     }
 }

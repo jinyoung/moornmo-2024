@@ -6,7 +6,6 @@ import java.util.List;
 import javax.persistence.*;
 import lombok.Data;
 import moornmo.ProductionApplication;
-import moornmo.domain.ProductionCompleted;
 import moornmo.domain.ProductionScheduled;
 
 @Entity
@@ -27,9 +26,6 @@ public class Production {
     public void onPostPersist() {
         ProductionScheduled productionScheduled = new ProductionScheduled(this);
         productionScheduled.publishAfterCommit();
-
-        ProductionCompleted productionCompleted = new ProductionCompleted(this);
-        productionCompleted.publishAfterCommit();
     }
 
     public static ProductionRepository repository() {
@@ -38,6 +34,16 @@ public class Production {
         );
         return productionRepository;
     }
+
+    //<<< Clean Arch / Port Method
+    public void completeProduction() {
+        //implement business logic here:
+
+        ProductionCompleted productionCompleted = new ProductionCompleted(this);
+        productionCompleted.publishAfterCommit();
+    }
+
+    //>>> Clean Arch / Port Method
 
     //<<< Clean Arch / Port Method
     public static void addProductionSchedule(SalesRegistered salesRegistered) {

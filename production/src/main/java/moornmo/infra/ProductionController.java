@@ -19,5 +19,30 @@ public class ProductionController {
 
     @Autowired
     ProductionRepository productionRepository;
+
+    @RequestMapping(
+        value = "productions/{id}/completeproduction",
+        method = RequestMethod.PUT,
+        produces = "application/json;charset=UTF-8"
+    )
+    public Production completeProduction(
+        @PathVariable(value = "id") Long id,
+        HttpServletRequest request,
+        HttpServletResponse response
+    ) throws Exception {
+        System.out.println(
+            "##### /production/completeProduction  called #####"
+        );
+        Optional<Production> optionalProduction = productionRepository.findById(
+            id
+        );
+
+        optionalProduction.orElseThrow(() -> new Exception("No Entity Found"));
+        Production production = optionalProduction.get();
+        production.completeProduction();
+
+        productionRepository.save(production);
+        return production;
+    }
 }
 //>>> Clean Arch / Inbound Adaptor
