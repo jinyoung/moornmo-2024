@@ -33,7 +33,7 @@ mvn spring-boot:run
 ## Test by API
 - sales
 ```
- http :8088/sales id="id" customerId="customerId" productId="productId" qty="qty" 
+ http :8088/sales id="id" customerId="customerId" productId="productId" qty="qty" status="status" 
 ```
 - production
 ```

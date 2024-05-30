@@ -70,6 +70,7 @@
                     { text: "customerId", value: "customerId" },
                     { text: "productId", value: "productId" },
                     { text: "qty", value: "qty" },
+                    { text: "status", value: "status" },
                 ],
             sales : [],
             newValue: {},
@@ -90,6 +91,7 @@
                 'customerId': '',
                 'productId': '',
                 'qty': 0,
+                'status': '',
             }
         },
         methods: {
