@@ -31,6 +31,11 @@ public class Sales {
     @PostPersist
     public void onPostPersist() {
         SalesRegistered salesRegistered = new SalesRegistered(this);
+
+        
+
+        salesRegistered.setCompanyId(getCompanyId().getId());
+        salesRegistered.setProductId(getItemId().getId());
         salesRegistered.publishAfterCommit();
     }
 

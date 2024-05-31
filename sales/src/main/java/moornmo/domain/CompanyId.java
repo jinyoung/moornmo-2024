@@ -15,7 +15,7 @@ import org.springframework.beans.BeanUtils;
 @NoArgsConstructor
 public class CompanyId {
 
-    private Long id;
+    private String id;
 
     private String name;
 }

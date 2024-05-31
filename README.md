@@ -42,7 +42,7 @@ mvn spring-boot:run
 
 - sales
 ```
- http :8088/sales customerId[id]=1 productId="productId" qty=10 
+ http :8088/sales customerId[id]="MRM" itemId[id]="ITEM1" qty=10 
 ```
 - production
 ```
