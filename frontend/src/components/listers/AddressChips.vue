@@ -12,7 +12,11 @@
                     <v-list-item-content>
                         <v-list-item-title>Message {{idx+1}}</v-list-item-title>
                         <v-list-item-subtitle>
-                            Id :  {{item.id }} <br>
+                            Street :  {{item.street }} <br>
+                            City :  {{item.city }} <br>
+                            State :  {{item.state }} <br>
+                            Country :  {{item.country }} <br>
+                            ZipCode :  {{item.zipcode }} <br>
                         </v-list-item-subtitle>
                     </v-list-item-content>
                     <v-list-item-action v-if="editMode">

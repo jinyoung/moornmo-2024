@@ -17,5 +17,8 @@ public class ItemId {
 
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private String name;
 }
 //>>> DDD / Value Object
