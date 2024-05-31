@@ -1,8 +1,8 @@
 package moornmo.domain;
 
+import jakarta.persistence.*;
 import java.util.Date;
 import java.util.List;
-import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
