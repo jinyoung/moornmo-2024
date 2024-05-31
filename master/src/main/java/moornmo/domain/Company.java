@@ -17,7 +17,6 @@ import moornmo.MasterApplication;
 public class Company {
 
     @Id
-    @RestResource(exported = true)
     private String id;
 
     private String name;

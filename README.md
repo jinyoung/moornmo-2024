@@ -246,6 +246,81 @@ cd /bin
 ```
 
 
+# Data Projection with GraphQL (BFF pattern)
+run the apollo-graphql :
+```
+cd apollo-graphQL
+npm i
+yarn start
+```
+
+> Make sure the graphQL service (port: 8089) is internet accessible. (If you use Gitpod, Turn the lock button for the service inside "PORTS" panel which is located right side of TERMINAL tab.)
+
+Navigate to the url: localhost:8089
+
+paste this query:
+
+```
+query ExampleQuery($saleId: Long!) {
+
+  sale(id: $saleId) {
+    qty
+    company{
+      id
+      name
+    }
+    item{
+      id
+      name
+    }
+  }
+}
+
+```
+
+and set the variables below to the query textarea:
+
+```
+{
+  "saleId": 1
+}
+```
+
+You will get this result:
+
+```
+{
+  "data": {
+    "sale": {
+      "qty": 10,
+      "company": {
+        "id": "MRM",
+        "name": "murunmo"
+      },
+      "item": {
+        "id": "ITEM1",
+        "name": "ITEM1"
+      }
+    }
+  }
+}
+```
+
+You can see how it is implemented in "apollo-graphQL/src/graphql/resolvers.js and typeDefs.js":
+```
+const resolvers = {
+    Sales: {
+        company: async (root, {}, {dataSources}) => {
+            return await dataSources.masterRestApi.getCompany(root.companyId.id);
+        },
+        item: async (root, {}, {dataSources}) => {
+            return await dataSources.masterRestApi.getItem(root.itemId.id);
+        }
+    }
+    ...
+}
+```
+
 ## Run the frontend
 ```
 cd frontend
