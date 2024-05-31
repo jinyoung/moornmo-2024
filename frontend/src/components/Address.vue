@@ -6,6 +6,11 @@
         </v-card-title>
 
         <v-card-text>
+            <String label="Street" v-model="value.street" :editMode="editMode"/>
+            <String label="City" v-model="value.city" :editMode="editMode"/>
+            <String label="State" v-model="value.state" :editMode="editMode"/>
+            <String label="Country" v-model="value.country" :editMode="editMode"/>
+            <String label="ZipCode" v-model="value.zipcode" :editMode="editMode"/>
         </v-card-text>
 
         <v-card-actions v-if="inList">
@@ -33,10 +38,29 @@
             if(!Object.values(this.value)[0]) {
                 this.$emit('input', {});
                 this.newValue = {
-                    'id': '',
+                    'street': '',
+                    'city': '',
+                    'state': '',
+                    'country': '',
+                    'zipcode': '',
                 }
             }
             if(typeof this.value === 'object') {
+                if(!('street' in this.value)) {
+                    this.value.street = '';
+                }
+                if(!('city' in this.value)) {
+                    this.value.city = '';
+                }
+                if(!('state' in this.value)) {
+                    this.value.state = '';
+                }
+                if(!('country' in this.value)) {
+                    this.value.country = '';
+                }
+                if(!('zipcode' in this.value)) {
+                    this.value.zipcode = '';
+                }
             }
         },
         watch: {

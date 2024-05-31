@@ -16,6 +16,7 @@ import org.springframework.beans.BeanUtils;
 public class CompanyId {
 
     private Long id;
+
     private String name;
 }
 //>>> DDD / Value Object

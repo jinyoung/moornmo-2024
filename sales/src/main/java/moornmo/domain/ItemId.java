@@ -18,6 +18,5 @@ public class ItemId {
     private Long id;
 
     private String name;
-
 }
 //>>> DDD / Value Object
