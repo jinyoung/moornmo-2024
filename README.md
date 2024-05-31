@@ -33,9 +33,16 @@ mvn spring-boot:run
 ```
 
 ## Test by API
+- master
+```
+ http :8088/companies id="MRM" name="murunmo" 
+ http :8088/users id="rickie@murunmo.com" email="email" name="rickie" addresses[0][city]="seoul" addresses[0][street]="garosugil" addresses[1][city]="yongin" addresses[1][street]="masungro"
+ http :8088/items id="ITEM1" name="ITEM1" 
+```
+
 - sales
 ```
- http :8088/sales customerId="customerId" productId="productId" qty=10 
+ http :8088/sales customerId[id]=1 productId="productId" qty=10 
 ```
 - production
 ```
@@ -49,12 +56,7 @@ mvn spring-boot:run
 - dashboard
 ```
 ```
-- master
-```
- http :8088/companies name="name" 
- http :8088/users email="email" name="name" addresses[0].="addresses" title="title" 
- http :8088/items name="name" 
-```
+
 
 
 ## Run the frontend
