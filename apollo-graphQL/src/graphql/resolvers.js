@@ -1,7 +1,12 @@
 
 const resolvers = {
     Sales: {
-        // set Query
+        company: async (root, {}, {dataSources}) => {
+            return await dataSources.masterRestApi.getCompany(root.companyId.id);
+        },
+        item: async (root, {}, {dataSources}) => {
+            return await dataSources.masterRestApi.getItem(root.itemId.id);
+        }
     },
     Production: {
         // set Query

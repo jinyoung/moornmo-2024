@@ -1,4 +1,5 @@
-import {RESTDataSource} from 'apollo-datasource-rest';
+
+import {RESTDataSource} from 'apollo-datasource-rest';
 
 class masterRestApi extends RESTDataSource {
     constructor() {
@@ -46,6 +47,8 @@ class masterRestApi extends RESTDataSource {
 
     // GET
     async getItem(id) {
+        console.log("id="+ id)
+
         const data = await this.get(`/items/${id}`, {})
         var value = this.stringToJson(data);
         return value;

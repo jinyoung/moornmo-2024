@@ -12,7 +12,9 @@ const typeDefs = gql`
 			qty: Integer 
 			status: String 
 			companyId: CompanyId 
+      company: Company
 			itemId: ItemId
+      item: Item
     }
     type Production {
     	id: Long! 
