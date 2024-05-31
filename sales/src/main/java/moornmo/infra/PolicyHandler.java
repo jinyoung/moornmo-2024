@@ -2,9 +2,9 @@ package moornmo.infra;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.transaction.Transactional;
 import javax.naming.NameParser;
 import javax.naming.NameParser;
-import javax.transaction.Transactional;
 import moornmo.config.kafka.KafkaProcessor;
 import moornmo.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
