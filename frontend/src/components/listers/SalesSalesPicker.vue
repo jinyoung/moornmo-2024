@@ -15,16 +15,16 @@
                             <v-list-item-title>
                             </v-list-item-title>
                             <v-list-item-subtitle>
-                                CustomerId :  {{item.customerId }}
-                            </v-list-item-subtitle>
-                            <v-list-item-subtitle>
-                                ProductId :  {{item.productId }}
-                            </v-list-item-subtitle>
-                            <v-list-item-subtitle>
                                 Qty :  {{item.qty }}
                             </v-list-item-subtitle>
                             <v-list-item-subtitle>
                                 Status :  {{item.status }}
+                            </v-list-item-subtitle>
+                            <v-list-item-subtitle>
+                                CompanyId :  {{item.companyId }}
+                            </v-list-item-subtitle>
+                            <v-list-item-subtitle>
+                                ItemId :  {{item.itemId }}
                             </v-list-item-subtitle>
                         </v-list-item-content>
 

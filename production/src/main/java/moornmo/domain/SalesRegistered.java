@@ -13,4 +13,5 @@ public class SalesRegistered extends AbstractEvent {
     private String companyId;
     private String productId;
     private Integer qty;
+    private String customerId;
 }

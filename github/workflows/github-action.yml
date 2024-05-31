@@ -31,6 +31,8 @@ jobs:
         run: |
           mvn clean package -f ./sales/pom.xml
           mvn clean package -f ./production/pom.xml
+          mvn clean package -f ./dashboard/pom.xml
+          mvn clean package -f ./master/pom.xml
 
       - name: Docker Build and push for Sales
         uses: docker/build-push-action@v4
@@ -51,4 +53,24 @@ jobs:
           tags: |
             ghcr.io/${{ github.repository }}/production:latest
             ghcr.io/${{ github.repository }}/production:${{ github.ref_name }}
+            
+      - name: Docker Build and push for Dashboard
+        uses: docker/build-push-action@v4
+        with:
+          context: ./dashboard
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository }}/dashboard:latest
+            ghcr.io/${{ github.repository }}/dashboard:${{ github.ref_name }}
+            
+      - name: Docker Build and push for Master
+        uses: docker/build-push-action@v4
+        with:
+          context: ./master
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository }}/master:latest
+            ghcr.io/${{ github.repository }}/master:${{ github.ref_name }}
             

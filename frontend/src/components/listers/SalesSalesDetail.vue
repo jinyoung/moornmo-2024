@@ -6,17 +6,13 @@
 
         <v-card-text>
             <div>
-                <String label="CustomerId" v-model="item.customerId" :editMode="editMode" @change="change" />
-            </div>
-            <div>
-                <String label="ProductId" v-model="item.productId" :editMode="editMode" @change="change" />
-            </div>
-            <div>
                 <Number label="Qty" v-model="item.qty" :editMode="editMode" @change="change" />
             </div>
             <div>
                 <String label="Status" v-model="item.status" :editMode="editMode" @change="change" />
             </div>
+            <CompanyId offline label="CompanyId" v-model="item.companyId" :editMode="false" :key="false" @change="change" />
+            <ItemId offline label="ItemId" v-model="item.itemId" :editMode="false" :key="false" @change="change" />
         </v-card-text>
 
         <v-card-actions>

@@ -18,13 +18,15 @@ public class Sales {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String customerId;
-
-    private String productId;
-
     private Integer qty;
 
     private String status;
+
+    @Embedded
+    private CompanyId companyId;
+
+    @Embedded
+    private ItemId itemId;
 
     @PostPersist
     public void onPostPersist() {

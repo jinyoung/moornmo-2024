@@ -22,6 +22,8 @@ See the README.md files inside the each microservices directory:
 
 - sales
 - production
+- dashboard
+- master
 
 
 ## Run API Gateway (Spring Gateway)
@@ -33,11 +35,20 @@ mvn spring-boot:run
 ## Test by API
 - sales
 ```
- http :8088/sales id="id" customerId="customerId" productId="productId" qty="qty" status="status" 
+ http :8088/sales id="id" qty="qty" status="status" companyId="companyId" itemId="itemId" 
 ```
 - production
 ```
  http :8088/productions id="id" productId="productId" qty="qty" orderId="orderId" 
+```
+- dashboard
+```
+```
+- master
+```
+ http :8088/companies id="id" name="name" 
+ http :8088/users id="id" email="email" name="name" addresses="addresses" title="title" 
+ http :8088/items id="id" name="name" 
 ```
 
 

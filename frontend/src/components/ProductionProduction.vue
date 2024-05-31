@@ -204,7 +204,7 @@
             async completeProduction() {
                 try {
                     if(!this.offline) {
-                        var temp = await axios.put(axios.fixUrl(this.value._links['completeproduction'].href))
+                        var temp = await axios.put(axios.fixUrl(this.value._links['complete-production'].href))
                         for(var k in temp.data) {
                             this.value[k]=temp.data[k];
                         }

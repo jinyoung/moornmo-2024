@@ -17,6 +17,14 @@ spring:
           uri: http://localhost:8083
           predicates:
             - Path=/productions/**, 
+        - id: dashboard
+          uri: http://localhost:8084
+          predicates:
+            - Path=, 
+        - id: master
+          uri: http://localhost:8085
+          predicates:
+            - Path=/companies/**, /users/**, /items/**, 
         - id: frontend
           uri: http://localhost:8080
           predicates:
@@ -49,6 +57,14 @@ spring:
           uri: http://production:8080
           predicates:
             - Path=/productions/**, 
+        - id: dashboard
+          uri: http://dashboard:8080
+          predicates:
+            - Path=, 
+        - id: master
+          uri: http://master:8080
+          predicates:
+            - Path=/companies/**, /users/**, /items/**, 
         - id: frontend
           uri: http://frontend:8080
           predicates:

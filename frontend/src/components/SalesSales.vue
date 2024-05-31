@@ -16,10 +16,10 @@
         </v-card-title >        
 
         <v-card-text>
-            <String label="CustomerId" v-model="value.customerId" :editMode="editMode" :inputUI="''"/>
-            <String label="ProductId" v-model="value.productId" :editMode="editMode" :inputUI="''"/>
             <Number label="Qty" v-model="value.qty" :editMode="editMode" :inputUI="''"/>
             <String label="Status" v-model="value.status" :editMode="editMode" :inputUI="''"/>
+            <CompanyId offline label="CompanyId" v-model="value.companyId" :editMode="editMode" @change="change"/>
+            <ItemId offline label="ItemId" v-model="value.itemId" :editMode="editMode" @change="change"/>
         </v-card-text>
 
         <v-card-actions>
