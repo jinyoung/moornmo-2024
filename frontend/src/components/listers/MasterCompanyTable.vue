@@ -68,6 +68,7 @@
                 [
                     { text: "id", value: "id" },
                     { text: "name", value: "name" },
+                    { text: "addresses", value: "addresses" },
                 ],
             company : [],
             newValue: {},
@@ -86,6 +87,7 @@
 
             this.newValue = {
                 'name': '',
+                'addresses': [],
             }
         },
         methods: {

@@ -20,17 +20,18 @@ const typeDefs = gql`
 			orderId: Long
     }
     type Company {
-    	id: Long! 
-			name: String
+    	id: String! 
+			name: String 
+			addresses: List<Address>
     }
     type User {
-    	id: Long! 
+    	id: String! 
 			email: String 
 			name: String 
 			addresses: List<Address>
     }
     type Item {
-    	id: Long! 
+    	id: String! 
 			name: String
     }
 
