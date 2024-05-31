@@ -109,9 +109,10 @@
             me.values = temp.data._embedded.sales;
             
             me.newValue = {
-                'customerId': '',
-                'productId': '',
                 'qty': 0,
+                'status': '',
+                'companyId': {},
+                'itemId': {},
             }
         },
         methods:{

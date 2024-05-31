@@ -67,9 +67,10 @@
             headers: 
                 [
                     { text: "id", value: "id" },
-                    { text: "customerId", value: "customerId" },
-                    { text: "productId", value: "productId" },
                     { text: "qty", value: "qty" },
+                    { text: "status", value: "status" },
+                    { text: "companyId", value: "companyId" },
+                    { text: "itemId", value: "itemId" },
                 ],
             sales : [],
             newValue: {},
@@ -87,9 +88,10 @@
             this.values = temp.data._embedded.sales;
 
             this.newValue = {
-                'customerId': '',
-                'productId': '',
                 'qty': 0,
+                'status': '',
+                'companyId': {},
+                'itemId': {},
             }
         },
         methods: {

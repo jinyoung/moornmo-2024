@@ -58,6 +58,41 @@
                     </v-list-item>
 
 
+
+                    <v-list-item
+                        class="px-2"
+                        key="companies"
+                        to="/masters/companies"
+                        @click="changeUrl()"
+                        color="primary"
+                        style="font-weight:700;"
+                    >
+                        Company
+                    </v-list-item>
+
+                    <v-list-item
+                        class="px-2"
+                        key="users"
+                        to="/masters/users"
+                        @click="changeUrl()"
+                        color="primary"
+                        style="font-weight:700;"
+                    >
+                        User
+                    </v-list-item>
+
+                    <v-list-item
+                        class="px-2"
+                        key="items"
+                        to="/masters/items"
+                        @click="changeUrl()"
+                        color="primary"
+                        style="font-weight:700;"
+                    >
+                        Item
+                    </v-list-item>
+
+
                 </v-list>
             </v-navigation-drawer>
         </div>
@@ -148,6 +183,27 @@ export default {
                 description: '', 
                 key: 'productions', 
                 route: '/productions/productions',
+                ImageUrl: '',
+            },
+            { 
+                title: 'Company', 
+                description: '', 
+                key: 'companies', 
+                route: '/masters/companies',
+                ImageUrl: '',
+            },
+            { 
+                title: 'User', 
+                description: '', 
+                key: 'users', 
+                route: '/masters/users',
+                ImageUrl: '',
+            },
+            { 
+                title: 'Item', 
+                description: '', 
+                key: 'items', 
+                route: '/masters/items',
                 ImageUrl: '',
             },
             

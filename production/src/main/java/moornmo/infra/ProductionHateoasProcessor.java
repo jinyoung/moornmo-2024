@@ -16,9 +16,9 @@ public class ProductionHateoasProcessor
             Link
                 .of(
                     model.getRequiredLink("self").getHref() +
-                    "/completeproduction"
+                    "/complete-production"
                 )
-                .withRel("completeproduction")
+                .withRel("complete-production")
         );
 
         return model;

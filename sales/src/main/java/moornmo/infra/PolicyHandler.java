@@ -35,7 +35,6 @@ public class PolicyHandler {
             "\n\n##### listener UpdateStatus : " + productionCompleted + "\n\n"
         );
 
-        // Sample Logic //
         Sales.updateStatus(event);
     }
 }

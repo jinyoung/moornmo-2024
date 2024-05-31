@@ -22,6 +22,8 @@ See the README.md files inside the each microservices directory:
 
 - sales
 - production
+- dashboard
+- master
 
 
 ## Run API Gateway (Spring Gateway)
@@ -43,6 +45,15 @@ mvn spring-boot:run
 - check the sales status
 ```
  http :8088/sales/1
+```
+- dashboard
+```
+```
+- master
+```
+ http :8088/companies id="id" name="name" 
+ http :8088/users id="id" email="email" name="name" addresses="addresses" title="title" 
+ http :8088/items id="id" name="name" 
 ```
 
 

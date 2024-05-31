@@ -18,14 +18,19 @@ public class Sales {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String customerId;
-
-    private String productId;
-
     private Integer qty;
 
     private String status;
 
+<<<<<<< HEAD
+=======
+    @Embedded
+    private CompanyId companyId;
+
+    @Embedded
+    private ItemId itemId;
+
+>>>>>>> origin/template
     @PostPersist
     public void onPostPersist() {
         SalesRegistered salesRegistered = new SalesRegistered(this);
