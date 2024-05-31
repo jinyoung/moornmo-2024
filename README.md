@@ -306,7 +306,7 @@ You will get this result:
 }
 ```
 
-You can see how it is implemented in "apollo-graphQL/src/graphql/resolvers.js and typeDefs.js":
+You can see how it is implemented with this code: "apollo-graphQL/src/graphql/resolvers.js and typeDefs.js"
 ```
 const resolvers = {
     Sales: {
