@@ -12,7 +12,6 @@
                 <String label="Name" v-model="item.name" :editMode="editMode" @change="change" />
             </div>
             <AddressManager offline label="Addresses" v-model="item.addresses" :editMode="false" @change="change" />
-            <Title offline label="Title" v-model="item.title" :editMode="false" :key="false" @change="change" />
         </v-card-text>
 
         <v-card-actions>

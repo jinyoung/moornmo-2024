@@ -70,7 +70,6 @@
                     { text: "email", value: "email" },
                     { text: "name", value: "name" },
                     { text: "addresses", value: "addresses" },
-                    { text: "title", value: "title" },
                 ],
             user : [],
             newValue: {},
@@ -91,7 +90,6 @@
                 'email': '',
                 'name': '',
                 'addresses': [],
-                'title': '',
             }
         },
         methods: {
