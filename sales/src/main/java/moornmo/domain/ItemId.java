@@ -15,15 +15,9 @@ import org.springframework.beans.BeanUtils;
 @NoArgsConstructor
 public class ItemId {
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private String name;
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Boolean filled;
-
-    public void fill() {}
 }
 //>>> DDD / Value Object

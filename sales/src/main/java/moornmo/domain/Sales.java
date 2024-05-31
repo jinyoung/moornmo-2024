@@ -22,15 +22,12 @@ public class Sales {
 
     private String status;
 
-<<<<<<< HEAD
-=======
     @Embedded
     private CompanyId companyId;
 
     @Embedded
     private ItemId itemId;
 
->>>>>>> origin/template
     @PostPersist
     public void onPostPersist() {
         SalesRegistered salesRegistered = new SalesRegistered(this);

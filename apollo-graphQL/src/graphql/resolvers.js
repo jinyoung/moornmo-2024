@@ -1,19 +1,20 @@
-const resolvers = {
+
+const resolvers = {
     Sales: {
         // set Query
-    }
+    },
     Production: {
         // set Query
-    }
+    },
     Company: {
         // set Query
-    }
+    },
     User: {
         // set Query
-    }
+    },
     Item: {
         // set Query
-    }
+    },
 
     Query: {
         sales : async (_, { id }, { dataSources }) => {

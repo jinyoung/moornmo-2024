@@ -14,8 +14,6 @@ import org.springframework.beans.BeanUtils;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Address {
-
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 }
 //>>> DDD / Value Object

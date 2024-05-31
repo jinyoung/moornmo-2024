@@ -24,8 +24,6 @@ public class User {
     @ElementCollection
     private List<Address> addresses;
 
-    private Title title;
-
     public static UserRepository repository() {
         UserRepository userRepository = MasterApplication.applicationContext.getBean(
             UserRepository.class
