@@ -14,10 +14,12 @@ import moornmo.MasterApplication;
 public class Company {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private String id;
 
     private String name;
+
+    @ElementCollection
+    private List<Address> addresses;
 
     public static CompanyRepository repository() {
         CompanyRepository companyRepository = MasterApplication.applicationContext.getBean(

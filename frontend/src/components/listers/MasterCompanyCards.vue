@@ -110,6 +110,7 @@
             
             me.newValue = {
                 'name': '',
+                'addresses': [],
             }
         },
         methods:{

@@ -46,7 +46,7 @@ mvn spring-boot:run
 ```
 - master
 ```
- http :8088/companies id="id" name="name" 
+ http :8088/companies id="id" name="name" addresses="addresses" 
  http :8088/users id="id" email="email" name="name" addresses="addresses" 
  http :8088/items id="id" name="name" 
 ```
