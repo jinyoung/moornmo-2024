@@ -44,7 +44,6 @@
                 this.$emit('input', {});
                 this.newValue = {
                     'id': '',
-                    'name': '',
                 }
             }
             else {

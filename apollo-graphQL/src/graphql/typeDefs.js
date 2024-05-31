@@ -27,8 +27,7 @@ const typeDefs = gql`
     	id: Long! 
 			email: String 
 			name: String 
-			addresses: List<Address> 
-			title: Title
+			addresses: List<Address>
     }
     type Item {
     	id: Long! 

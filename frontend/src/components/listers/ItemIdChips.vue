@@ -13,8 +13,6 @@
                         <v-list-item-title>Message {{idx+1}}</v-list-item-title>
                         <v-list-item-subtitle>
                             Id :  {{item.id }} <br>
-                            Name :  {{item.name }} <br>
-                            Filled :  {{item.filled }} <br>
                         </v-list-item-subtitle>
                     </v-list-item-content>
                     <v-list-item-action v-if="editMode">

@@ -112,7 +112,6 @@
                 'email': '',
                 'name': '',
                 'addresses': [],
-                'title': '',
             }
         },
         methods:{

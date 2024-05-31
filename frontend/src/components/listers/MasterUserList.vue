@@ -44,7 +44,6 @@
                             
                             
                             
-                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
@@ -52,7 +51,6 @@
                             [ Email :  {{data.email }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Name :  {{data.name }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Addresses :  {{data.addresses }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ Title :  {{data.title }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
                     </v-list-item-content>
@@ -123,7 +121,6 @@
                 'email': '',
                 'name': '',
                 'addresses': [],
-                'title': '',
             }
         },
         methods: {
