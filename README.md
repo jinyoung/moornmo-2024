@@ -13,10 +13,11 @@ docker-compose up
 ## Run the backend micro-services
 See the README.md files inside the each microservices directory:
 
+- master
 - sales
 - production
 - dashboard
-- master
+
 
 
 ## Run API Gateway (Spring Gateway)
@@ -131,7 +132,6 @@ transfer-encoding: chunked
     }
 }
 
- http PUT :8088/productions/1/completeproduction
 ```
 
 - check the order status:

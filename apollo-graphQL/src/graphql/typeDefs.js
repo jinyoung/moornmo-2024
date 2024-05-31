@@ -1,4 +1,5 @@
-import {gql} from 'apollo-server';
+
+import {gql} from 'apollo-server';
 
 const typeDefs = gql`
     scalar Date
@@ -19,25 +20,38 @@ const typeDefs = gql`
 			qty: Integer 
 			orderId: Long
     }
+    type CompanyId {
+    	id: String! 
+			name: String 
+    }
+    type ItemId {
+    	id: String! 
+			name: String 
+    }
     type Company {
     	id: String! 
 			name: String 
-			addresses: List<Address>
+			addresses: [Address]
     }
     type User {
     	id: String! 
 			email: String 
 			name: String 
-			addresses: List<Address>
+			addresses: [Address]
     }
     type Item {
     	id: String! 
 			name: String
     }
+    type Address {
+    	city: String! 
+			street: String
+    }
+
 
     type Query {
       sales: [Sales]
-      sales(id: Long!): Sales
+      sale(id: Long!): Sales
       productions: [Production]
       production(id: Long!): Production
       companies: [Company]

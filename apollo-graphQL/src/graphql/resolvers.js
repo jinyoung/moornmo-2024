@@ -17,7 +17,7 @@ const resolvers = {
     },
 
     Query: {
-        sales : async (_, { id }, { dataSources }) => {
+        sale : async (_, { id }, { dataSources }) => {
             return dataSources.salesRestApi.getSales(id);
         },
         sales : async (_, __, { dataSources }) => {

@@ -4,6 +4,9 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
+
+import org.springframework.data.rest.core.annotation.RestResource;
+
 import lombok.Data;
 import moornmo.MasterApplication;
 
@@ -14,6 +17,7 @@ import moornmo.MasterApplication;
 public class Company {
 
     @Id
+    @RestResource(exported = true)
     private String id;
 
     private String name;
