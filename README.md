@@ -9,13 +9,6 @@ www.msaez.io/#/487999/storming/moornmo
 cd kafka
 docker-compose up
 ```
-- Check the Kafka messages:
-```
-cd infra
-docker-compose exec -it kafka /bin/bash
-cd /bin
-./kafka-console-consumer --bootstrap-server localhost:9092 --topic
-```
 
 ## Run the backend micro-services
 See the README.md files inside the each microservices directory:
@@ -41,20 +34,215 @@ mvn spring-boot:run
 ```
 
 - sales
+  - Validation:
 ```
- http :8088/sales customerId[id]="MRM" itemId[id]="ITEM1" qty=10 
+ http :8088/sales itemId[id]="ITEM1" qty=10 
+
+ # will returns following error:
+
+{
+    "error": "Bad Request",
+    "message": "Some mandatory entry value is not present",
+    "path": "/sales",
+    "status": 400,
+    "timestamp": "2024-05-31T12:06:15.934+00:00"
+}
 ```
+
+   - Correction:
+```
+http :8088/sales companyId[id]="MRM" itemId[id]="ITEM1" qty=10 
+
+# will returns 200 OK:
+
+HTTP/1.1 201 Created
+Content-Type: application/json
+Date: Fri, 31 May 2024 12:11:06 GMT
+Location: http://localhost:8082/sales/2
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+transfer-encoding: chunked
+
+{
+    "_links": {
+        "sales": {
+            "href": "http://localhost:8082/sales/2"
+        },
+        "self": {
+            "href": "http://localhost:8082/sales/2"
+        }
+    },
+    "companyId": {
+        "id": "MRM",
+        "name": null
+    },
+    "itemId": {
+        "id": "ITEM1",
+        "name": null
+    },
+    "qty": 10,
+    "status": null
+}
+
+```
+
+
 - production
 ```
- http :8088/productions/1
+ http :8088/productions
+
+ #will returns a production item that corresponds to the orderItem:
+
+ {
+    "_embedded": {
+        "productions": [
+            {
+                "_links": {
+                    "complete-production": {
+                        "href": "http://localhost:8083/productions/1/complete-production"
+                    },
+                    "production": {
+                        "href": "http://localhost:8083/productions/1"
+                    },
+                    "self": {
+                        "href": "http://localhost:8083/productions/1"
+                    }
+                },
+                "orderId": 2,
+                "productId": "ITEM1",
+                "qty": 10
+            }
+        ]
+    },
+    "_links": {
+        "profile": {
+            "href": "http://localhost:8083/profile/productions"
+        },
+        "self": {
+            "href": "http://localhost:8083/productions"
+        }
+    },
+    "page": {
+        "number": 0,
+        "size": 20,
+        "totalElements": 1,
+        "totalPages": 1
+    }
+}
+
  http PUT :8088/productions/1/completeproduction
 ```
-- check the sales status
+
+- check the order status:
 ```
  http :8088/sales/1
+
+ #will returns its status as null:
+    "_embedded": {
+        "sales": [
+            {
+                "_links": {
+                    "sales": {
+                        "href": "http://localhost:8082/sales/2"
+                    },
+                    "self": {
+                        "href": "http://localhost:8082/sales/2"
+                    }
+                },
+                "companyId": {
+                    "id": "MRM",
+                    "name": null
+                },
+                "itemId": {
+                    "id": "ITEM1",
+                    "name": null
+                },
+                "qty": 10,
+                "status": null
+            }
+        ]
+    },
 ```
-- dashboard
+
+- Complete the Production:
 ```
+ http PUT :8088/productions/1/complete-production
+
+```
+
+- check again for the order status:
+```
+ http :8088/sales
+
+ #will returns its status as "DELIVERED":
+       "sales": [
+            {
+                "_links": {
+                    "sales": {
+                        "href": "http://localhost:8082/sales/2"
+                    },
+                    "self": {
+                        "href": "http://localhost:8082/sales/2"
+                    }
+                },
+                "companyId": {
+                    "id": "MRM",
+                    "name": null
+                },
+                "itemId": {
+                    "id": "ITEM1",
+                    "name": null
+                },
+                "qty": 10,
+                "status": "DELIVERED"
+            }
+        ]
+```
+
+- You can watch the dashboard its statuses are changing according to the Sales and Production stages proceed
+```
+
+http :8088/dashboards
+
+# will returns:
+{
+    "_embedded": {
+        "dashboards": [
+            {
+                "_links": {
+                    "dashboard": {
+                        "href": "http://localhost:8084/dashboards/2"
+                    },
+                    "self": {
+                        "href": "http://localhost:8084/dashboards/2"
+                    }
+                },
+                "customerId": "MRM",
+                "productionStatus": "COMPLETED",  <==
+                "salesStatus": "INIT"
+            }
+        ]
+    },
+
+```
+
+- Check the Kafka messages:
+
+1. attach to the container instance:
+```
+cd infra
+docker-compose exec -it kafka /bin/bash
+```
+2. watch kafka event by pushing this command:
+```
+cd /bin
+./kafka-console-consumer --bootstrap-server localhost:9092 --topic moornmo --from-beginning
+
+# will shows these event logs:
+{"eventType":"SalesRegistered","timestamp":1717157466415,"id":2,"companyId":"MRM","productId":"ITEM1","qty":10,"customerId":null}
+{"eventType":"ProductionScheduled","timestamp":1717157466938,"id":1,"productId":"ITEM1","qty":10,"orderId":2}
+{"eventType":"ProductionCompleted","timestamp":1717157772323,"id":1,"productId":"ITEM1","qty":10,"orderId":2}
 ```
 
 

@@ -20,7 +20,7 @@ spring:
         - id: dashboard
           uri: http://localhost:8084
           predicates:
-            - Path=, 
+            - Path=/dashboards/**, # ReadModel에 대한 Path가 생성안되는 문제!
         - id: master
           uri: http://localhost:8085
           predicates:

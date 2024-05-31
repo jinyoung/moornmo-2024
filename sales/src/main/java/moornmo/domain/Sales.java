@@ -32,7 +32,8 @@ public class Sales {
     public void onPostPersist() {
         SalesRegistered salesRegistered = new SalesRegistered(this);
 
-        
+        if(getCompanyId()==null) throw new MandatoryValueException("CompanyId");
+        if(getItemId()==null) throw new MandatoryValueException("ItemId");
 
         salesRegistered.setCompanyId(getCompanyId().getId());
         salesRegistered.setProductId(getItemId().getId());

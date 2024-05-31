@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 )
 public class MandatoryValueException extends RuntimeException {
 
-    public MandatoryValueException() {
-        super("Some mandatory entry value is not present");
+    public MandatoryValueException(String detail) {
+        super("Some mandatory entry value is not present: " + detail);
     }
 }
