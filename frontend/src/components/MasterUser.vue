@@ -18,7 +18,6 @@
         <v-card-text>
             <String label="Email" v-model="value.email" :editMode="editMode" :inputUI="''"/>
             <String label="Name" v-model="value.name" :editMode="editMode" :inputUI="''"/>
-            <List&lt;Address&gt; offline label="Addresses" v-model="value.addresses" :editMode="editMode" @change="change"/>
             <AddressManager offline label="Addresses" v-model="value.addresses" :editMode="editMode" @change="change"/>
             <Title offline label="Title" v-model="value.title" :editMode="editMode" @change="change"/>
         </v-card-text>
